@@ -1,0 +1,10 @@
+﻿@model Directory
+
+<h1>@Model.Name</h1>
+
+<ul>
+@foreach (var childDirectory in Model.Children)
+{
+    <li><a href="@Url.Action("Index", new { id = childDirectory.Id })">@childDirectory.Name</a></li>
+}
+</ul>
